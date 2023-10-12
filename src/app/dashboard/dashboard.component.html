@@ -1,0 +1,51 @@
+<div class="dashboard-container">
+  <mat-toolbar color="primary">
+    <div class="left-topbar">
+      <button mat-icon-button (click)="sidenav?.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="mx-8">{{title}}</span>
+      <mat-form-field>
+        <mat-select [disabled]="projectSelector.value">
+          <mat-option value="option1">Event 1</mat-option>
+          <!-- loop through user events -->
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button
+      class="login"
+      mat-mini-fab
+    >
+      <mat-icon>person</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav
+      mode="side"
+      opened
+      #sidenav
+    >
+      <nav>
+        <a
+        mat-button
+        class=""
+        *ngFor="let link of links"
+        [routerLink]="link.path"
+        routerLinkActive="active"
+        >
+        <mat-icon>
+          {{ link.icon }}
+        </mat-icon>
+        {{ link.title }}
+      </a>
+    </nav>
+    <mat-divider></mat-divider>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-new-registration-form></app-new-registration-form>
+    <app-new-event></app-new-event>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,42 @@
+
+<mat-card class="w-[600px]">
+  <mat-card-header>
+    <mat-card-title>Create a registration form</mat-card-title>
+    <mat-card-subtitle>A registration form helps track guests and any needs or requirements. </mat-card-subtitle>
+  </mat-card-header>
+  <form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+    <mat-card-content>
+      <div formArrayName="inputGroup">
+        <div *ngFor="let input of inputGroup.controls; let i = index" formGroupName="{{i}}" class="grid grid-cols-12">
+          <mat-form-field class="col-span-6">
+            <mat-label>Field Name</mat-label>
+            <input type="text" matInput placeholder="Field name" formControlName="inputName"/>
+          </mat-form-field>
+          <mat-form-field class="col-span-4">
+            <mat-label>Field Type</mat-label>
+            <mat-select formControlName="inputType">
+              <mat-option *ngFor="let type of inputTypes" [value]="type.value">
+                {{type.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="col-span-2 flex justify-center">
+            <button mat-icon-button color="warn" aria-label="Remove/clear"
+                (click)="removeOrClearEmail(i)" matTooltip="Remove">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" aria-label="Add"
+                (click)="addInputFormGroup()" matTooltip="Add">
+              <mat-icon>add_circle_outline</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end" class="flex gap-4">
+      <!-- <button mat-mini-fab color="accent" (click)="addInputFormGroup()"><mat-icon>add</mat-icon></button> -->
+      <button mat-flat-button color="warn">Cancel</button>
+      <button mat-flat-button color="primary" type="submit">Create form</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
