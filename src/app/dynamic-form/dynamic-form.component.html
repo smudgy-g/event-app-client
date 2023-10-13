@@ -1,0 +1,17 @@
+<mat-card>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <mat-card-content>
+    <div *ngFor="let question of questions" class="flex-row">
+      <app-dynamic-question [question]="question" [form]="form"></app-dynamic-question>
+    </div>
+  </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button type="submit" [disabled]="form.invalid">Save</button>
+    </mat-card-actions>
+  </form>
+  <mat-card-footer>
+    <div *ngIf="payLoad" class="flex-row">
+      {{payLoad}}
+    </div>
+  </mat-card-footer>
+</mat-card>

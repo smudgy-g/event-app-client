@@ -9,6 +9,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms'
 import { MaterialModule } from './material.module';
 import { NewRegistrationFormComponent } from './new-registration-form/new-registration-form.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { DynamicQuestionComponent } from './dynamic-form/components/dynamic-question/dynamic-question.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { NewRegistrationFormComponent } from './new-registration-form/new-regist
     AppComponent,
     DashboardComponent,
     NewEventComponent,
-    NewRegistrationFormComponent
+    NewRegistrationFormComponent,
+    DynamicFormComponent,
+    DynamicQuestionComponent,
+    RegistrationComponent
   ],
   imports: [
     AppRoutingModule,
