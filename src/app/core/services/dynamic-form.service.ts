@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { QuestionBase } from '../core/dynamic-form/question-base';
+import { QuestionBase } from '../classes/question-base';
 import { of } from 'rxjs';
-import { TextboxQuestion } from '../core/dynamic-form/question-textbox';
-import { DateQuestion } from '../core/dynamic-form/question-date';
-import { CheckboxQuestion } from '../core/dynamic-form/question-checkbox';
+import { TextboxQuestion } from '../classes/question-textbox';
+import { DateQuestion } from '../classes/question-date';
+import { CheckboxQuestion } from '../classes/question-checkbox';
 
 @Injectable({
   providedIn: 'root'

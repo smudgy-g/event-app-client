@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DynamicFormService } from '../dynamic-form/dynamic-form.service';
+import { DynamicFormService } from '../core/services/dynamic-form.service';
 import { Observable } from 'rxjs';
-import { QuestionBase } from '../core/dynamic-form/question-base';
+import { QuestionBase } from '../core/classes/question-base';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

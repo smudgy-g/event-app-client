@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { QuestionBase } from '../core/dynamic-form/question-base';
+import { QuestionBase } from '../../classes/question-base';
 import { FormGroup } from '@angular/forms';
-import { QuestionControlService } from '../core/dynamic-form/question-control.service';
+import { QuestionControlService } from '../../services/question-control.service';
 
 @Component({
   selector: 'app-dynamic-form',
